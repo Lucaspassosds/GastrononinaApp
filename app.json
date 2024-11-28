@@ -1,5 +1,8 @@
 {
   "expo": {
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "name": "GastrononinaApp",
     "slug": "GastrononinaApp",
     "version": "1.0.0",
@@ -25,6 +28,9 @@
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
     },
-    "plugins": ["expo-sqlite"]
+    "plugins": [
+      "expo-sqlite",
+      "expo-font"
+    ]
   }
 }
