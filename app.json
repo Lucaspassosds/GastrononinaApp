@@ -3,7 +3,7 @@
     "assetBundlePatterns": ["**/*"],
     "name": "GastrononinaApp",
     "slug": "GastrononinaApp",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/svg/nina-front.svg",
     "userInterfaceStyle": "light",
@@ -19,12 +19,12 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/svg/nina-front.svg",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#B1CB53"
       },
       "package": "com.anonymous.GastrononinaApp"
     },
     "web": {
-      "favicon": "./assets/favicon.png",
+      "favicon": "./assets/svg/nina-front.svg",
       "bundler": "metro"
     },
     "plugins": ["expo-sqlite", "expo-font"]
