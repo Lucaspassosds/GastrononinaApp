@@ -6,7 +6,7 @@ import Title2 from "../../../assets/svg/NINA.svg";
 
 const isDev = __DEV__; // React Native's built-in flag to check development mode
 
-const TutorialScreen = () => {
+const SplashScreen = () => {
   // Animation values
   const ninaScale = useRef(new Animated.Value(0.1)).current; // Start from 0.1 scale
   const ninaOpacity = useRef(new Animated.Value(1)).current; // Start fully visible
@@ -136,4 +136,4 @@ const TutorialScreen = () => {
   );
 };
 
-export default TutorialScreen;
+export default SplashScreen;

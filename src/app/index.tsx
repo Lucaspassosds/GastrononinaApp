@@ -1,9 +1,9 @@
 import * as SQLite from "expo-sqlite";
 import { drizzle } from "drizzle-orm/expo-sqlite";
-import "./global.css";
+import "../../global.css";
 import React, { useEffect, useState } from "react";
 import * as Font from "expo-font";
-import TutorialScreen from "./src/screens/Tutorial";
+import SplashScreen from "../screens/Splash";
 
 const expo = SQLite.openDatabaseSync("db.db");
 
@@ -14,8 +14,8 @@ export default function App() {
 
   const loadFonts = async () => {
     await Font.loadAsync({
-      Birdgo: require("./assets/fonts/Birdgo.ttf"),
-      "Chopin-Trial": require("./assets/fonts/Chopin-Trial.ttf"),
+      Birdgo: require("../../assets/fonts/Birdgo.ttf"),
+      "Chopin-Trial": require("../../assets/fonts/Chopin-Trial.ttf"),
     });
     setFontsLoaded(true);
   };
@@ -24,5 +24,5 @@ export default function App() {
     loadFonts();
   }, []);
 
-  return <TutorialScreen />;
+  return <SplashScreen />;
 }
