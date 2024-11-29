@@ -1,19 +1,16 @@
 {
   "expo": {
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "name": "GastrononinaApp",
     "slug": "GastrononinaApp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/svg/nina-front.svg",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#B1CB53"
     },
     "ios": {
       "supportsTablet": true,
@@ -21,7 +18,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/svg/nina-front.svg",
         "backgroundColor": "#ffffff"
       },
       "package": "com.anonymous.GastrononinaApp"
@@ -30,9 +27,6 @@
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
     },
-    "plugins": [
-      "expo-sqlite",
-      "expo-font"
-    ]
+    "plugins": ["expo-sqlite", "expo-font"]
   }
 }

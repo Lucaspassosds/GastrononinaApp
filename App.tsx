@@ -12,6 +12,7 @@ import "./global.css";
 import { useEffect, useState } from "react";
 import * as Font from "expo-font";
 import { Typography } from "./src/components";
+import TutorialScreen from "./src/screens/Tutorial";
 
 const expo = SQLite.openDatabaseSync("db.db");
 
@@ -32,19 +33,5 @@ export default function App() {
     loadFonts();
   }, []);
 
-  return (
-    <View style={styles.container}>
-      <Typography>Open up App.tsx to start working on your app!</Typography>
-      <StatusBar style="auto" />
-    </View>
-  );
+  return <TutorialScreen />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
