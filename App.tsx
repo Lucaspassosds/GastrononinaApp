@@ -1,10 +1,17 @@
 import { StatusBar } from "expo-status-bar";
-import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
+import {
+  ActivityIndicator,
+  StyleSheet,
+  Text,
+  TextStyle,
+  View,
+} from "react-native";
 import * as SQLite from "expo-sqlite";
 import { drizzle } from "drizzle-orm/expo-sqlite";
 import "./global.css";
 import { useEffect, useState } from "react";
 import * as Font from "expo-font";
+import { Typography } from "./src/components";
 
 const expo = SQLite.openDatabaseSync("db.db");
 
@@ -25,17 +32,9 @@ export default function App() {
     loadFonts();
   }, []);
 
-  // if (!fontsLoaded) {
-  //   return (
-  //     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-  //       <ActivityIndicator size="large" />
-  //     </View>
-  //   );
-  // }
-
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Typography>Open up App.tsx to start working on your app!</Typography>
       <StatusBar style="auto" />
     </View>
   );
