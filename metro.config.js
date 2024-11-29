@@ -1,21 +1,26 @@
 const { getDefaultConfig } = require("expo/metro-config");
 const { withNativeWind } = require("nativewind/metro");
 
-/** @type {import('expo/metro-config').MetroConfig} */
-const config = getDefaultConfig(__dirname);
+module.exports = (() => {
+  const config = getDefaultConfig(__dirname);
 
-// Configure asset extensions
-config.resolver.assetExts = config.resolver.assetExts.filter(
-  (ext) => ext !== "svg"
-);
-config.resolver.sourceExts.push("svg", "sql"); // Add support for .svg and .sql files
+  const { transformer, resolver } = config;
 
-// Configure transformers for SVG files
-config.transformer = {
-  babelTransformerPath: require.resolve("react-native-svg-transformer"),
-};
+  config.transformer = {
+    ...transformer,
+    babelTransformerPath: require.resolve("react-native-svg-transformer/expo"),
+    getTransformOptions: async () => ({
+      transform: {
+        experimentalImportSupport: false,
+        inlineRequires: true,
+      },
+    }),
+  };
+  config.resolver = {
+    ...resolver,
+    assetExts: resolver.assetExts.filter((ext) => ext !== "svg"),
+    sourceExts: [...resolver.sourceExts, "svg", "sql"],
+  };
 
-// Wrap the configuration with NativeWind
-const finalConfig = withNativeWind(config, { input: "./global.css" });
-
-module.exports = finalConfig;
+  return withNativeWind(config, { input: "./global.css" });
+})();

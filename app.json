@@ -28,6 +28,6 @@
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
     },
-    "plugins": ["expo-sqlite", "expo-font", "expo-asset"]
+    "plugins": ["expo-sqlite", "expo-font"]
   }
 }
